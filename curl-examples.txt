@@ -1,0 +1,27 @@
+Start the web service
+uvicorn main:app --reload
+
+
+
+Test the main-sample.py app
+
+curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"name":"Phone","description":"iPhone 13","price":"1200","tax":"100"}' http://127.0.0.1:8000/items
+
+
+main2.py
+curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"img_req":"dog",name":"Phone","description":"iPhone 13","price":"1200","tax":"100"}' http://127.0.0.1:8000/items
+
+
+
+wip1
+curl -X POST --output img.jpg -H "Content-Type: application/json; charset=utf-8" -d '{"project_id":"rkiles-demo-host-vpc","location":"us-central1","imagen_prompt":"a yellow purse on a mountain top","im_background_sz":"7987, 1024","im_background_color":"10, 60, 140","img1_pos":"100,0"}' http://127.0.0.1:8000/items/
+
+
+
+curl -X POST -H "Content-Type: multipart/mixed; charset=utf-8" -F '{"name":"Phone","description":"iPhone 13","price":"1200","tax":"100"}' http://127.0.0.1:8000/items
+
+
+
+
+
+curl -X POST --output img.png -H "Content-Type: application/json; charset=utf-8" -d '{"project_id":"rkiles-demo-host-vpc","location":"us-central1","imagen_prompt":"a yellow purse on a mountain top","im_background_sz":"7987, 1024","im_background_color":"10, 60, 140","img1_pos":"100,0"}' http://127.0.0.1:8000/items/
