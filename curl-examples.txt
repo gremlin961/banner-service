@@ -1,5 +1,9 @@
-Start the web service
+Start the web service on a local system for testing (default is port 8000)
 uvicorn main:app --reload
+
+
+Start the web service for production
+uvicorn main:app --host 0.0.0.0 --port 80
 
 
 Banner with single generated image:
