@@ -3,7 +3,7 @@ json format example:
 Make sure to change the values for "project_id", "img_bucket", "img2_name" and "img3_name" to your own values.
 
 {
-  "project_id": "YOUR_GCP_PROJECT_HERE",
+  "project_id": "rkiles-demo-host-vpc",
   "location": "us-central1",
   "imagen_prompt": "a yellow purse on a mountain top",
   "im_background_sz": "7987, 1024",
