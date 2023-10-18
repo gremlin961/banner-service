@@ -17,4 +17,4 @@ curl -X POST --output img.png -H "Content-Type: application/json; charset=utf-8"
 
 
 
-curl -X POST --output img.png -H "Content-Type: application/json; charset=utf-8" -d '{"project_id": "rkiles-demo-host-vpc","location": "us-central1","imagen_prompt": "a yellow purse on a mountain top","im_background_sz": "7987, 1024","im_background_color": "10, 60, 140","img_bucket": "rkiles-test","img2_name": "SummerSalesEvent.png","img3_name": "corp-logo.png","img1_pos": "100,0","img2_pos": "1300,20","img3_pos": "3500,200"}' https://banner-service-v4nlhyh6zq-uc.a.run.app/items/
+curl -X POST --output img.png -H "Content-Type: application/json; charset=utf-8" -d '{"project_id": "rkiles-demo-host-vpc","location": "us-central1","imagen_prompt": "a yellow purse on a mountain top","im_background_sz": "7987, 1024","im_background_color": "10, 60, 140","img_bucket": "rkiles-test","img2_name": "SummerSalesEvent.png","img3_name": "corp-logo.png","img1_pos": "100,0","img2_pos": "1300,20","img3_pos": "3500,200"}' ENTER_YOUR_SERVICE_URL_HERE/items/
