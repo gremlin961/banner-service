@@ -38,7 +38,7 @@ def GetImage(PROJECT_ID, BUCKET, FILE):
     return result
 
 
-def layer(BACKGROUND, IMAGE1, IMAGE1_POSITION, IMAGE2='FALSE', IMAGE2_POSITION='FALSE', IMAGE3='FALSE', IMAGE3_POSITION='FALSE'):
+def layer(BACKGROUND, IMAGE1, IMAGE1_POSITION, IMAGE2='FALSE', IMAGE2_POSITION='FALSE', IMAGE3='FALSE', IMAGE3_POSITION='FALSE', BANNER_SIZE):
     image1_pos = eval(IMAGE1_POSITION)
     image0 = BACKGROUND
     image1 = IMAGE1
@@ -53,7 +53,8 @@ def layer(BACKGROUND, IMAGE1, IMAGE1_POSITION, IMAGE2='FALSE', IMAGE2_POSITION='
         image3_pos = eval(IMAGE3_POSITION)        
         image3 = Image.open(BytesIO(image3_data)).convert("RGBA")
         image0.paste(image3, image3_pos, mask = image3)
-    image0 = image0.resize((468, 60))
+    #image0 = image0.resize((468, 60))
+    image0 = image0.resize((BANNER_SIZE))
     image0.convert('RGB')    
     buf = BytesIO()
     image0.save(buf, format='PNG')
