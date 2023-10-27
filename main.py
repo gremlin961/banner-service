@@ -27,6 +27,7 @@ class Item(BaseModel):
     img2_pos: Union[str, None] = None
     img3_pos: Union[str, None] = None
     banner_size: Union[str, None] = None
+    #banner_size: tuple[int] = None
 
 
 app = FastAPI()
@@ -61,10 +62,12 @@ async def create_item(item: Item):
 
     # If banner size is not provided to the API, use the default of 468 x 60
     if item.banner_size:
-        banner_size = item.banner_size
+        # Define the width and height variables by splitting the string passed by the API 
+        banner_width, banner_height = item.banner_size.split(',',1)
+        banner_size = int(banner_width),int(banner_height)
     else:
-        banner_size = '468,60'
-
+        banner_size = 468,60
+    
     # Use the layer function in GenImage to create the final image and return it to the client
-    final_image = GenImage.layer(background, generated_image, item.img1_pos, img2, item.img2_pos, img3, item.img3_pos, banner_size)
+    final_image = GenImage.layer(background, generated_image, item.img1_pos, banner_size, img2, item.img2_pos, img3, item.img3_pos)
     return Response(content=final_image, media_type="image/png")
